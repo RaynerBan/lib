@@ -1,7 +1,7 @@
 /***************************************************
  * PUILoad: encapsulated select
  * Used for PTS
- * author:jianhong.wangjh@alibaba-inc.com
+ * author:***
  * depend on:jquery-1.6.2.min.js
  * example(the basic usage):
  * <html>
@@ -29,7 +29,7 @@ function g(p,s){
 	}
 	return s;
 }
-var GET_LOAD_URL = g(GET_LOAD_URL,'http://ptsstyle.data.alibaba-inc.com/');
+var GET_LOAD_URL = g(GET_LOAD_URL,'http://ptsstyle.data.xxx.com/');
 (function(){if($ && $.PUILoad) {return;}
   //start
   var defaultconfig = {
