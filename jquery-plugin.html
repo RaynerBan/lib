@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">  
+      
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jQuery插件的写法-jQuery在线演示-jQuery学习</title>  
+    <link href="http://www.jquery001.com/css/Stylesheet_min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        h1{color:Green;}
+        #catagory{ list-style-type:none;}
+        #catagory li{ margin-top:10px;}
+        #catagory li a {font-weight:bold; text-decoration:none;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>     
+    <script type="text/javascript">
+        (function($) {
+            $.fn.extend({
+                //插件名称 - paddingList
+                paddingList: function(options) {
+
+                    //参数和默认值
+                    var defaults = {
+                        animatePadding: 10,
+                        hoverColor: "Black"
+                    };
+
+                    var options = $.extend(defaults, options);
+
+                    return this.each(function() {
+                        var o = options;
+
+                        //将元素集合赋给变量 本例中是 ul对象 
+                        var obj = $(this);
+
+                        //得到ul中的a对象
+                        var items = $("li a", obj);
+
+                        //添加hover()事件到a
+                        items.hover(function() {
+                            $(this).css("color", o.hoverColor);
+                            //queue false表示不添加到动画队列中
+                            $(this).animate({ paddingLeft: o.animatePadding }, { queue: false, duration: 300 });
+
+                        }, function() {
+                            $(this).css("color", "");
+                            $(this).animate({ paddingLeft: "0" }, { queue: true, duration: 300 });
+                        });
+
+                    });
+                }
+            });
+        })(jQuery);
+        //使用插件
+        $(document).ready(function() {
+            $("#catagory").paddingList({ animatePadding: 30, hoverColor: "Red" });
+        });
+    </script>  
+
+</head>     
+<body>
+    <div id="page-wrap">
+        <div id="header">   
+            <div id="log">
+                <h1><a id="logo" href="http://www.jquery001.com/">jQuery学习</a></h1>                                
+            </div> 
+            <ul id="mainNav">                
+                <li><a class="ma home" href="http://www.jquery001.com/">首页</a></li>
+                <li><a class="ma articles" href="http://www.jquery001.com/articles/articlelist.html">文章</a></li>
+                <li><a class="ma download" href="http://www.jquery001.com/jquery-plugins/plugins.html">jQuery插件</a></li>                
+                <li><a class="ma tool" href="http://www.jquery001.com/tool/">常用工具</a></li>
+                <li><a class="ma contact" href="http://www.lidongkui.com/contact">联系</a></li>
+                <li><a href="http://feed.feedsky.com/jquery001"><img src="http://www.jquery001.com/images/feed.png" width="40" height="40" alt="订阅jQuery学习" title="订阅jQuery学习" class="rss" /></a></li>
+            </ul>
+        </div>
+        <div id="content-wrap">     
+            <div id="content-left" class="demo">
+                <h1>jQuery插件写法</h1>
+                <p>原文请查看<a href="http://www.jquery001.com/how-to-write-jquery-plugin.html">jQuery插件的写法</a></p>
+                <ul id="catagory">  
+                    <li><a href="#">jQuery</a></li>  
+                    <li><a href="#">Asp.net</a></li>  
+                    <li><a href="#">Sql Server</a></li>  
+                    <li><a href="#">CSS</a></li>  
+                </ul>   
+            </div>
+            <div id="content-right"> 
+                <div>
+                <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-6709727481143968";
+                    /* demo */
+                    google_ad_slot = "4452365646";
+                    google_ad_width = 336;
+                    google_ad_height = 280;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="copyright">
+                <ul>
+                    <li>
+                        copyright &copy;2011          
+                    </li>
+                    <li>
+                        <a href="http://www.jquery001.com/" style="display:inline;">jQuery学习</a>    QQ群：133865403、116983258
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F188334bb1c28ed46d0d4d8c306c766b3' type='text/javascript'%3E%3C/script%3E"));
+    </script> 
+</body>
+</html>  
