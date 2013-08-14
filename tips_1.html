@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tips_1</title>
+
+	<style type="text/css">
+.trendImg,.trendask,i.close,i.add,i.diminished,li.paglast,li.first,i.tdaImg,i.tddImg,i.down{background:url("http://ipage.icbu.data.alibaba-inc.com/img/ipage.png")}
+.trendask{vertical-align: text-bottom;background-position:-614px -9px;display: inline-block;width: 16px;height: 16px;}
+.trendText{display:none;color:#666666;border:1px solid #e7d3ac;background:#fffbdd;width:200px;height:auto;position:absolute;padding: 5px;font-size: 13px;}
+
+#t1,#t2 {float: left;width: 100px;}
+	</style>
+</head>
+<body>
+<p>
+<div id="t1">
+    <i class="trendask"></i>
+    <div class="trendText"></div>
+</div>
+<div id="t2">
+    <i class="trendask"></i>
+    <div class="trendText"></div>
+</div>
+</p>
+
+	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$.fn.extend({
+				//插件名：tips_1
+				tips_1: function(text_content){
+					var $this = $(this);
+							
+					return $this.find('i.trendask').each(function(){
+						$(this).hover(function(){
+						
+						$this.find('.trendText').text(text_content).fadeIn().css({
+							left:$this.position().left+20,
+							top:$this.position().top+5
+						});
+					},function(){
+						$this.find('.trendText').fadeOut();
+					});
+				});s
+				}
+			});
+		})(jQuery);
+
+		$(document).ready(function(){
+		    var c1 = "最近一段时间用户对指定页面的访问情况。助您了解页面最近一段时间的流量总体走势，宏观把控页面的整体表现，洞察页面的整体优化效果";
+		    var c2 = "to be continued.....";
+			$('#t1').tips_1(c1);
+			$('#t2').tips_1(c2);
+		});
+	</script>
+</body>
+</html>
