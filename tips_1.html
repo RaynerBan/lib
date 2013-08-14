@@ -5,9 +5,9 @@
 	<title>tips_1</title>
 
 	<style type="text/css">
-.trendImg,.trendask,i.close,i.add,i.diminished,li.paglast,li.first,i.tdaImg,i.tddImg,i.down{background:url("http://ipage.icbu.data.alibaba-inc.com/img/ipage.png")}
-.trendask{vertical-align: text-bottom;background-position:-614px -9px;display: inline-block;width: 16px;height: 16px;}
-.trendText{display:none;color:#666666;border:1px solid #e7d3ac;background:#fffbdd;width:200px;height:auto;position:absolute;padding: 5px;font-size: 13px;}
+
+i.trend{vertical-align: text-bottom;background-position:-614px -9px;display: inline-block;width: 16px;height: 16px;background-image:url("http://ipage.icbu.data.alibaba-inc.com/img/ipage.png");}
+div.trend{display:none;color:#666666;border:1px solid #e7d3ac;background:#fffbdd;width:200px;height:auto;position:absolute;padding: 5px;font-size: 13px;}
 
 #t1,#t2 {float: left;width: 100px;}
 	</style>
@@ -15,12 +15,12 @@
 <body>
 <p>
 <div id="t1">
-    <i class="trendask"></i>
-    <div class="trendText"></div>
+    <i class="trend"></i>
+    <div class="trend"></div>
 </div>
 <div id="t2">
-    <i class="trendask"></i>
-    <div class="trendText"></div>
+    <i class="trend"></i>
+    <div class="trend"></div>
 </div>
 </p>
 
@@ -32,15 +32,15 @@
 				tips_1: function(text_content){
 					var $this = $(this);
 							
-					return $this.find('i.trendask').each(function(){
+					return $this.find('i.trend').each(function(){
 						$(this).hover(function(){
 						
-						$this.find('.trendText').text(text_content).fadeIn().css({
+						$this.find('div.trend').text(text_content).fadeIn().css({
 							left:$this.position().left+20,
 							top:$this.position().top+5
 						});
 					},function(){
-						$this.find('.trendText').fadeOut();
+						$this.find('div.trend').fadeOut();
 					});
 				});s
 				}
