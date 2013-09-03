@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tag</title>
+	<style type="text/css">
+		body,div,ul,li,a{margin: 0 auto;padding: 0;}
+		.main div{border: 1px solid gray;}
+		.main{width: 500px;height:auto;}
+		.main .tags{width: 100%;}
+		.main .tags .tagUl{}
+		.main .tags .tagUl .tagLi{display: inline-block;list-style-type: none;list-style:inside;}
+		.main .tags .tagUl .tagLi div{width: 100px;height: 20px;}
+		.main  .tagContent{width: 100%;height: 200px;}
+		.activeTag{background: orange;}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="tags">
+			<ul class="tagUl">
+				<li class="tagLi" index='1'><div></div></li>
+				<li class="tagLi" index='2'><div></div></li>
+				<li class="tagLi" index='3'><div></div></li>
+				<li class="tagLi" index='4'><div></div></li>
+			</ul>
+		</div>
+		<div class="tagContents">
+			<div class="tagContent">1</div>
+			<div class="tagContent" style="display: none;">2</div>
+			<div class="tagContent" style="display: none;">3</div>
+			<div class="tagContent" style="display: none;">4</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./icbu_data/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('ul.tagUl').find('li.tagLi').click(function(){
+				var li = $(this);
+				li.siblings('.activeTag').removeClass('activeTag');
+				li.addClass('activeTag');								
+				var tagContents = $('div.tagContents').find('.tagContent').hide();		
+				$(tagContents[li.attr('index')-1]).show();	
+			});
+		});
+		
+
+	</script>
+</body>
+</html>
