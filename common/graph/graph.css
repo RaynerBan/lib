@@ -1,0 +1,34 @@
+
+.histogram-container{position:relative;margin-left:60px;margin-top:10px;margin-bottom:50px;}
+.histogram-bg-line{border:#999 solid;border-width:0 0px 1px 1px;border-right-color:#eee;overflow:hidden;width:99%;}
+.histogram-bg-line ul{overflow:hidden;border:#eee solid;border-width:1px 0 0 0;clear:both;}
+.histogram-bg-line li{float:left;overflow:hidden;background:#fff;}
+.histogram-bg-line li div{border-right:1px #eee solid;}
+.histogram-content{position:absolute;left:0px;top:0;width:99%;height:100%;}
+.histogram-content ul{height:100%;}
+.histogram-content li{float:left;height:100%;text-align:center;position:relative;}
+.histogram-box{position:relative;display:inline-block;height:100%;width:45%;max-width: 140px;opacity:0.7;filter:alpha(opacity=70);}
+.histogram-box .animation_height:hover{opacity:0.6;filter:alpha(opacity=60);}
+.histogram-box .animation_height-hover{opacity:0.6;filter:alpha(opacity=60);}
+a.animation_height{-webkit-animation-name: myfirst;-webkit-animation-duration: 2s;}
+@-webkit-keyframes myfirst {0% {height:0px;}}
+@keyframes myfirst{0% {height:0px;}}
+@-moz-keyframes myfirst {0% {height:0px;}}
+@-o-keyframes myfirst {0% {height:0px;}}
+.histogram-content li a{position:absolute;bottom:0;right:0;display:block;width:90%;font-size:0;line-height:0;}
+.histogram-content li .histogram-per{position:absolute;left:0px;white-space:nowrap;display:inline-block;width:100%;font-size:12px;overflow:hidden;-webkit-animation-name: "second";-webkit-animation-duration: 4s;}
+@-webkit-keyframes second{0% {color:#ffffff;}}
+@keyframes myfirst{0% {color:#ffffff;}}
+@-moz-keyframes myfirst {0% {color:#ffffff;}}
+@-o-keyframes myfirst {0% {color:#ffffff;}}
+.histogram-content li .histogram-name{overflow:hidden;max-height: 48px;position:relative;bottom:0px;left:0px;white-space:normal;display:inline-block;width:100%;font-size:12px;}
+.histogram-y{position:absolute;left:-60px;top:0px;font:12px/1.8 verdana,arial;}
+.histogram-y li{text-align:right;width:55px;padding-right:5px;color:#333;}
+.histogram-bg-line li div,.histogram-y li{height:70px;}
+
+@media screen and (max-width: 767px) {
+#main .histogram-content li .histogram-name{overflow:hidden;max-height: 48px; !important}
+#main .histogram-per{display: none; !important}
+}
+
+a.animation_height{animation-name: myfirst;animation-duration: 2s;-webkit-animation-name: myfirst;-webkit-animation-duration: 2s;animation-name: myfirst;animation-duration: 2s;-moz-animation-name: myfirst;-moz-animation-duration: 2s;-o-animation-name: myfirst;-o-animation-duration: 2s;}
